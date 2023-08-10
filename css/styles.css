@@ -424,7 +424,9 @@ button {
   color: var(--primary-background-color);
   background-color: var(--pressed-button-color);
   border-color: var(--pressed-button-color);
-  box-shadow: 0px 2px 2px 0px #0000001F, 0px 2px 1px 0px #00000014, 0px 3px 1px 0px #0000001A;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .page-footer {
