@@ -38,6 +38,7 @@ img {
 }
 
 .link {
+  display: block;
   text-decoration: none;
   color: var(--primary-dark-color);
   font-style: normal;
@@ -66,6 +67,7 @@ button {
 
 .page-header {
   border-bottom: 1px solid var(--frame-color);
+  box-shadow: зі значенням 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-flex-wrapper {
@@ -101,8 +103,9 @@ button {
   letter-spacing: 0.02em;
 }
 
-.menu-item {
+.menu-item .link {
   padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .list .link:hover,
@@ -111,13 +114,19 @@ button {
   color: var(--pressed-button-color);
 }
 
+.current {
+  color: var(--pressed-button-color);
+  position: relative;
+}
+
 .current::after {
+  position: absolute;
   content: '';
-  display: block;
+  left: 0;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  margin-top: 20px;
   background-color: var(--pressed-button-color);
 }
 
@@ -125,9 +134,6 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
-}
-
-.contact-data {
   padding-top: 24px;
   padding-bottom: 24px;
 }
@@ -137,6 +143,7 @@ button {
 }
 
 .hero-screen {
+  max-width: 1440px;
   padding: 188px 0;
   background-color: var(--primary-dark-color);
   color: var(--primary-background-color);
@@ -144,7 +151,8 @@ button {
   background-image: linear-gradient(rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
   background-size: cover;
-  max-width: 1440рх;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero-header {
@@ -208,6 +216,7 @@ button {
   align-items: center;
   margin-bottom: 8px;
   background-color: var(--secondary-light-color);
+  border-radius: 4px;
 }
 
 .photo-list {
@@ -232,7 +241,8 @@ button {
 
 .social-links-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 24px;
   padding: 8px 16px 0;
 }
 
@@ -248,11 +258,13 @@ button {
   transition: background-color var(--transition-dur-and-func);
 }
 
-.social-link:hover {
+.social-link:hover,
+.social-link:focus {
   background-color: var(--pressed-button-color);
 }
 
-.social-link-footer:hover {
+.social-link-footer:hover,
+.social-link-footer:focus {
   background-color: #31D0AA;
 }
 
@@ -260,9 +272,14 @@ button {
   width: calc((100% - 24px*5)/6);
 }
 
+.social-icon {
+  fill: #f4f4fd;
+}
+
 .customers-list-wrapper {
   display: flex;
   justify-content: space-between;
+  gap: 24px;
 }
 
 .customer-link-item {
@@ -360,16 +377,21 @@ button {
   width: calc((100% - 48px) / 3);
 }
 
-.portfolio-card-text {
-  padding: 32px 16px;
-  border: 1px solid var(--frame-color);
-  border-top: none;
+.portfoloio-link {
   box-shadow: none;
   transition: box-shadow var(--transition-dur-and-func);
 }
 
-.portfolio-item:hover .portfolio-card-text {
-  box-shadow: 0px 2px 1px 0px #2E2F4214, 0px 1px 1px 0px #2E2F4229, 0px 1px 6px 0px #2E2F4214;
+.portfolio-card-text {
+  padding: 32px 16px;
+  border: 1px solid var(--frame-color);
+  border-top: none;
+}
+
+.portfolio-item:hover .portfoloio-link {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .filter-menu {
@@ -402,12 +424,16 @@ button {
   background-color: var(--primary-dark-color);
 }
 
-.footer-list {
+.footer-container {
   display: flex;
-  column-gap: 100px;
+  align-items: baseline;
 }
 
-.footer-list-item .logo {
+.footer-item:first-child {
+  margin-right: 120px;
+}
+
+.footer-item .logo {
   display: inline-block;
   margin-bottom: 16px;
   color: var(--primary-brand-color);
@@ -416,6 +442,7 @@ button {
 .footer-links-wrapper {
   display: flex;
   column-gap: 16px;
+
 }
 
 .footer-header-text {
@@ -441,7 +468,7 @@ button {
   z-index: 9999;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(46, 47, 66, 0.4);
   transition: opacity var(--transition-dur-and-func), visibility var(--transition-dur-and-func);
 }
 
@@ -457,16 +484,23 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   background-color: #FCFCFC;
+  border-radius: 4px;
+  box-shadow: зі значенням 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .close-btn {
   position: absolute;
   top: 24px;
   right: 24px;
-  padding: 8px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
   line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--frame-color);
@@ -478,9 +512,10 @@ button {
   transition: fill var(--transition-dur-and-func);
 }
 
-.close-btn:hover {
+.close-btn:hover,
+.close-btn:focus {
   background-color: var(--pressed-button-color);
-  border: 1px solid var(--frame-color);
+  border: none;
 }
 
 .close-btn:hover .icon-close {
