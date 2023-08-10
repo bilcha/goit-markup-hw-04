@@ -67,7 +67,7 @@ button {
 
 .page-header {
   border-bottom: 1px solid var(--frame-color);
-  box-shadow: зі значенням 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-flex-wrapper {
@@ -270,6 +270,7 @@ button {
 
 .customers-list-item {
   width: calc((100% - 24px*5)/6);
+  height: 88px;
 }
 
 .social-icon {
@@ -287,21 +288,24 @@ button {
   justify-content: center;
   align-items: center;
   padding: 16px 32px;
+  color: #8E8F99;
   border: 1px solid #8E8F99;
   border-radius: 4px;
-  transition: border(--transition-dur-and-func);
+  transition: border var(--transition-dur-and-func);
 }
 
-.customer-link-item:hover {
+.customer-link-item:hover,
+.customer-link-item:focus {
   border: 1px solid var(--pressed-button-color);
 }
 
 .customers-icon {
   fill: #8E8F99;
-  transition: fill (--transition-dur-and-func);
+  transition: fill var(--transition-dur-and-func);
 }
 
-.customer-link-item:hover .customers-icon {
+.customer-link-item:hover .customers-icon,
+.customer-link-item:focus .customers-icon {
   fill: var(--pressed-button-color);
 }
 
@@ -388,7 +392,8 @@ button {
   border-top: none;
 }
 
-.portfolio-item:hover .portfoloio-link {
+.portfolio-item:hover .portfoloio-link,
+.portfolio-item:focus .portfoloio-link {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -408,14 +413,14 @@ button {
   border: 1px solid var(--frame-color);
   border-radius: 4px;
   box-shadow: none;
-  transition: color var(--transition-dur-and-func), background-color var(--transition-dur-and-func), border var(--transition-dur-and-func), box-shadow var(--transition-dur-and-func);
+  transition: color var(--transition-dur-and-func), background-color var(--transition-dur-and-func), border-color var(--transition-dur-and-func), box-shadow var(--transition-dur-and-func);
 }
 
 .filter-button:hover,
 .filter-button:focus {
   color: var(--primary-background-color);
   background-color: var(--pressed-button-color);
-  border: 1px solid var(--pressed-button-color);
+  border-color: var(--pressed-button-color);
   box-shadow: 0px 2px 2px 0px #0000001F, 0px 2px 1px 0px #00000014, 0px 3px 1px 0px #0000001A;
 }
 
@@ -441,7 +446,7 @@ button {
 
 .footer-links-wrapper {
   display: flex;
-  column-gap: 16px;
+  gap: 16px;
 
 }
 
@@ -454,11 +459,15 @@ button {
 .footer-logo {
   line-height: 1.5;
   letter-spacing: 0.02em;
+}
+
+.footer-logo {
   color: var(--secondary-light-color);
 }
 
 .footer-text {
   max-width: 264px;
+  color: var(--primary-background-color);
 }
 
 .backdrop {
@@ -487,7 +496,8 @@ button {
   min-height: 584px;
   background-color: #FCFCFC;
   border-radius: 4px;
-  box-shadow: зі значенням 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-dur-and-func);
 }
 
 .close-btn {
@@ -518,6 +528,7 @@ button {
   border: none;
 }
 
-.close-btn:hover .icon-close {
-  fill: var(--primary-background-color);
+.close-btn:hover .icon-close,
+.close-btn:focus .icon-close {
+  fill: #FFFFFF;
 }
