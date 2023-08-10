@@ -287,16 +287,18 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
   padding: 16px 32px;
   color: #8E8F99;
   border: 1px solid #8E8F99;
   border-radius: 4px;
-  transition: border var(--transition-dur-and-func);
+  transition: border-color var(--transition-dur-and-func), color var(--transition-dur-and-func);
 }
 
 .customer-link-item:hover,
 .customer-link-item:focus {
-  border: 1px solid var(--pressed-button-color);
+  border-color: 1px solid var(--pressed-button-color);
+  color: var(--pressed-button-color);
 }
 
 .customers-icon {
@@ -348,7 +350,8 @@ button {
   transform: translateY(100%);
 }
 
-.portfolio-item:hover .portfolio-overlay-text {
+.portfolio-item:hover .portfolio-overlay-text,
+.portfolio-item:focus .portfolio-overlay-text {
   transform: translateY(0);
 }
 
@@ -452,7 +455,7 @@ button {
 
 .footer-header-text {
   margin-bottom: 16px;
-  color: var(--secondary-light-color);
+  color: var(--primary-background-color);
 }
 
 .footer-text,
