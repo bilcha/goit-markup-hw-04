@@ -350,9 +350,9 @@ button {
   transform: translateY(100%);
 }
 
-.portfolio-item:hover .portfolio-overlay-text,
-.portfolio-item:focus .portfolio-overlay-text {
-  transform: translateY(0);
+.portfoloio-link:hover .portfolio-overlay-text,
+.portfoloio-link:focus .portfolio-overlay-text {
+  transform: translateY(0%);
 }
 
 .visually-hidden {
