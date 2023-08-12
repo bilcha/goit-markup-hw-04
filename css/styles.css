@@ -389,17 +389,17 @@ button {
   transition: box-shadow var(--transition-dur-and-func);
 }
 
+.portfoloio-link:hover,
+.portfoloio-link:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
 .portfolio-card-text {
   padding: 32px 16px;
   border: 1px solid var(--frame-color);
   border-top: none;
-}
-
-.portfolio-item:hover .portfoloio-link,
-.portfolio-item:focus .portfoloio-link {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16),
-    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .filter-menu {
